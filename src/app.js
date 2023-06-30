@@ -3,6 +3,7 @@ import indexRoutes from './routes/index.routes.js'
 import registroRoutes from './routes/registro.routes.js' 
 
 const app  = express()
+const cors = cors()
 
 app.use(express.json())
 
