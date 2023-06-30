@@ -6,12 +6,9 @@ const app  = express()
 
 app.use(express.json())
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5500'); // Cambia '*' por el dominio permitido para acceder a la API
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
+app.use(cors({
+    origin: "http://127.0.0.1:5500/registro/registro.html"
+}));
 
 app.use(indexRoutes)
 
