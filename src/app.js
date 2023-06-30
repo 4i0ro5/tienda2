@@ -8,7 +8,7 @@ const cors = cors()
 app.use(express.json())
 
 app.use(cors({
-    origin: "http://127.0.0.1:5501/registro/registro.html"
+    origin: "http://127.0.0.1:5501"
 }));
 
 app.use(indexRoutes)
