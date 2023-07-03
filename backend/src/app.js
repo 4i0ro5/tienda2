@@ -1,15 +1,18 @@
 import express from "express"
 import indexRoutes from './routes/index.routes.js'
 import registroRoutes from './routes/registro.routes.js' 
+import cors from "cors"
 
 const app  = express()
-const cors = cors()
 
 app.use(express.json())
 
-app.use(cors({
+app.use(cors(
+    /*{
     origin: "http://127.0.0.1:5501"
-}));
+}*/
+
+));
 
 app.use(indexRoutes)
 
