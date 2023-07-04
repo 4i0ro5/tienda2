@@ -9,11 +9,13 @@ const Formulario = ({ onSwitchForm }) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
+  const url = process.env.URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "/registro",
+      const response = await axios
+      .post(
+        url + "/registro",
         {
           username,
           nam,
