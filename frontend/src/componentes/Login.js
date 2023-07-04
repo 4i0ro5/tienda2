@@ -9,7 +9,7 @@ const Login = ({ onSwitchForm }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "/login",
+        "login",
         {
           email,
           password
@@ -49,7 +49,7 @@ const Login = ({ onSwitchForm }) => {
       </form>
       <p>
         ¿No tienes una cuenta?{' '}
-        <a href="#" onClick={onSwitchForm}>
+        <a href="/" onClick={onSwitchForm}>
           Regístrate aquí
         </a>
         .

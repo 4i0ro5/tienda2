@@ -9,7 +9,7 @@ const Formulario = ({ onSwitchForm }) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
-  const url = process.env.URL;
+  const url = "https://tienda-landing.onrender.com";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

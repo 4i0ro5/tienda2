@@ -1,8 +1,8 @@
-import { pool } from '../db.js';
+import { query } from '../db.js';
 
 export const indexPrin = async (req, res) => {
   try {
-    const { rows } = await pool.query('SELECT $1::text AS result', ['Pong']);
+    const { rows } = await query('SELECT $1::text AS result', ['Pong']);
     res.json(rows[0]);
   } catch (error) {
     return res.status(500).json({
@@ -13,7 +13,7 @@ export const indexPrin = async (req, res) => {
 
 export const indexPong = async (req, res) => {
   try {
-    const { rows } = await pool.query('SELECT $1::text AS result', ['Pong']);
+    const { rows } = await query('SELECT $1::text AS result', ['Pong']);
     res.json(rows[0]);
   } catch (error) {
     return res.status(500).json({
