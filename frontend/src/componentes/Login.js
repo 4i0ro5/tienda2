@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Login = ({ onSwitchForm }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://tienda2-production-f793.up.railway.app/api/login',
+        "/login",
         {
-          username,
-          pass: password
+          email,
+          password
         }
       );
       console.log(response.data);
@@ -23,15 +23,15 @@ const Login = ({ onSwitchForm }) => {
 
   return (
     <div>
-      <h1>Formulario de Inicio de Sesión</h1>
+      <h1>Iniciar Sesión</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Nombre de usuario:</label>
+        <label htmlFor="email">Email:</label>
         <input
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="email"
+          id="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         /><br/><br/>
 
@@ -45,7 +45,7 @@ const Login = ({ onSwitchForm }) => {
           required
         /><br/><br/>
 
-        <input type="submit" value="Ingresar" />
+        <input type="submit" value="Iniciar Sesión" />
       </form>
       <p>
         ¿No tienes una cuenta?{' '}

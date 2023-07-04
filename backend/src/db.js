@@ -1,10 +1,18 @@
-import {createPool} from "mysql2/promise"
-import {DB_HOST, DB_USER, DB_PASSWORD, DB_PORT, DB_DATABASE} from './config.js'
+import dotenv from 'dotenv';
+import pkg from 'pg';
+const { Pool } = pkg;
 
-export const pool = createPool({
-    host: DB_HOST,
-    user: DB_USER,
-    password: DB_PASSWORD,
-    port: DB_PORT,
-    database: DB_DATABASE
-})
+dotenv.config();
+
+const pool = new Pool({
+  connectionString: process.env.DB_CONNECTION_STRING,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+pool.on('connect', () => {
+  console.log('Conexión exitosa a la base de datos');
+});
+
+export {pool};

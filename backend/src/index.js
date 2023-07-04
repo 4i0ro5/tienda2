@@ -1,5 +1,7 @@
-import app from './app.js'
-import {PORT} from './config.js'
+import app from './app.mjs';
 
-app.listen(PORT)
-console.log("server runing on port ", PORT)
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
+});

@@ -13,7 +13,7 @@ const Formulario = ({ onSwitchForm }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://tienda2-production-f793.up.railway.app/api/registro',
+        "/registro",
         {
           username,
           nam,
